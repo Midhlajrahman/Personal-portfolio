@@ -68,6 +68,7 @@
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --orange-yellow-btn: hsla(45, 73%, 70%, 0.838);
 
   /**
    * typography
@@ -1887,9 +1888,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 .download-btn{
   float: left;
 }
-.d-btn{
+.download-btn{
   position: relative;
-  width: 25%;
+  width: 100%;
   background: var(--border-gradient-onyx);
   color: var(--orange-yellow-crayola) !important;
   display: flex;
@@ -1903,4 +1904,13 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: var(--shadow-3);
   z-index: 1;
   transition: var(--transition-1);
+ 
+  
+}
+.d-btn{
+ 
+  border-style: solid;
+  border-color: var(  --orange-yellow-btn)  !important;
+  border-radius: 14px;
+
 }

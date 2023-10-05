@@ -536,7 +536,7 @@
         </section>
         <button class="d-btn" type="submit" disabled data-form-btn>
          
-          <span class="download-btn" href="">Download resume</span>
+          <a href="https://drive.google.com/file/d/1syn203EvQndDdyp7SsP2ADK8H_joFHhp/view?usp=drive_link"><span class="download-btn" >Download resume</span></a>
         </button>
 
         <section class="skill">
@@ -1223,18 +1223,18 @@
           <form action="#" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="First name" required data-form-input>
-              <input type="text" name="fullname" class="form-input" placeholder="second name" required data-form-input>
+              <input type="text" name="fullname" class="form-input" placeholder="First name" required data-form-input id="first_name">
+              <input type="text" name="fullname" class="form-input" placeholder="second name" required data-form-input id="second_name">
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-              <input type="text" name="fullname" class="form-input" placeholder="subject" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input id="email">
+              <input type="text" name="fullname" class="form-input" placeholder="subject" required data-form-input id="subject">
             </div>
             
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input id="message"></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit" disabled data-form-btn 
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span onclick="sendwhatsapp()">Send Message</span>
             </button>
 
           </form>
@@ -1264,5 +1264,25 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+<script>
+  function sendwhatsapp(){
+      var phonenumber = "9037126305";
 
+      var first_name = document.getElementById("first_name").value;
+      var second_name = document.getElementById("second_name").value;
+      var email = document.getElementById("email").value;
+      var subject = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+
+      var url = "https://wa.me/" + phonenumber + "?text="
+      +"First Name : " +first_name+"%0a"
+      +"Second Name : " +second_name+"%0a"
+      +"Email : " +email+"%0a"
+      +"subject : " +subject+"%0a"
+      +"Message : " +message+"%0a%0a"
+      +"portfolio website";
+
+      window.open(url,  '_blank').focus();
+  }
+</script>
 </html>
